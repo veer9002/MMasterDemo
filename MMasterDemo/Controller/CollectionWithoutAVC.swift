@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CollectionWithoutAVC.swift
 //  MMasterDemo
 //
 //  Created by Manish Sharma on 16/12/18.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CollectionWithoutAVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-
 }
-
