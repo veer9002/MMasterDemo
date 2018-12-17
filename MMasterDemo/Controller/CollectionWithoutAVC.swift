@@ -13,10 +13,24 @@ class CollectionWithoutAVC: UIViewController {
     
     var realm = try! Realm()
     var dataArr = [Photos]()
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchJson()
+        fetchFromDB()
+    }
+    
+    func fetchFromDB() {
+        let list = realm.objects(Photos.self)
+        print(list.count)
+        
+        if list.count > 0 {
+            for i in 0..<list.count {
+                dataArr.append(list[i])
+            }
+        } else {
+            fetchJson()
+        }
     }
     
     func fetchJson() {
@@ -34,6 +48,9 @@ class CollectionWithoutAVC: UIViewController {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     self.dataArr = try decoder.decode([Photos].self, from: data)
+                    _ = DBHelper.shared.insertIntoDb(json: self.dataArr as NSArray)
+                    self.collectionView.reloadData()
+                    print(self.dataArr.count)
                 } catch let jsonErr  {
                     print("faield to decode", jsonErr)
                 }
@@ -50,7 +67,7 @@ extension CollectionWithoutAVC: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotosCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         if let image = cell.viewWithTag(1) as? UIImageView {
             let imageUrl = dataArr[indexPath.row].url
             let url = URL(string: imageUrl)

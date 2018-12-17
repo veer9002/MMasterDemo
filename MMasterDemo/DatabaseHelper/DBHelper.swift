@@ -23,7 +23,7 @@ class DBHelper {
                 let photos = Photos()
                 photos.albumId = (json[i] as AnyObject).value(forKey: "albumId") as! Int
                 photos.id = (json[i] as AnyObject).value(forKey: "id") as! Int
-                photos.albumTitle = (json[i] as AnyObject).value(forKey: "title") as! String
+                photos.title = (json[i] as AnyObject).value(forKey: "title") as! String
                 photos.url = (json[i] as AnyObject).value(forKey: "url") as! String
                 photos.thumbnailUrl = (json[i] as AnyObject).value(forKey: "thumbnailUrl") as! String
 

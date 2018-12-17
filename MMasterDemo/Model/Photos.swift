@@ -20,7 +20,7 @@ import RealmSwift
 class Photos: Object, Decodable {
     @objc dynamic var albumId = Int()
     @objc dynamic var id = Int()
-    @objc dynamic var albumTitle = ""
+    @objc dynamic var title = ""
     @objc dynamic var url = ""
     @objc dynamic var thumbnailUrl = ""
     
