@@ -21,4 +21,9 @@ class Comments: Object {
     @objc dynamic var name = ""
     @objc dynamic var emailId = ""
     @objc dynamic var body = ""
+    
+    // set primary key "invoiceID"
+    override static func primaryKey() -> String {
+        return "postId"
+    }
 }

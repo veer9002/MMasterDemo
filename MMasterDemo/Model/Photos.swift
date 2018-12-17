@@ -15,10 +15,17 @@ import RealmSwift
 //"url": "https://via.placeholder.com/600/92c952",
 //"thumbnailUrl": "https://via.placeholder.com/150/92c952"
 
-class Photos: Object {
+// if boolean .. let isDuplicate = RealmOptional<Bool>()
+
+class Photos: Object, Decodable {
     @objc dynamic var albumId = Int()
     @objc dynamic var id = Int()
     @objc dynamic var albumTitle = ""
     @objc dynamic var url = ""
     @objc dynamic var thumbnailUrl = ""
+    
+    // set primary key "invoiceID"
+    override static func primaryKey() -> String {
+        return "albumId"
+    }
 }

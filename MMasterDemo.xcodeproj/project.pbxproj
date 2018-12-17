@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437B582221C7A9CE00283CCC /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582121C7A9CE00283CCC /* PhotosCell.swift */; };
+		437B582421C7A9FA00283CCC /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582321C7A9FA00283CCC /* CommentsCell.swift */; };
 		58BD5B83CBA92703850E6E26 /* Pods_MMasterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB72DE4410D6AE28255739E /* Pods_MMasterDemo.framework */; };
 		BDFA1D7721C62C380008242D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA1D7621C62C380008242D /* AppDelegate.swift */; };
 		BDFA1D7921C62C380008242D /* CollectionWithAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA1D7821C62C380008242D /* CollectionWithAVC.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		2EB72DE4410D6AE28255739E /* Pods_MMasterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMasterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		437B582121C7A9CE00283CCC /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		437B582321C7A9FA00283CCC /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
 		481C3FB343D470068AB38B86 /* Pods-MMasterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMasterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMasterDemo/Pods-MMasterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BDFA1D7321C62C380008242D /* MMasterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMasterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFA1D7621C62C380008242D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				BDFA1D7D21C62C3A0008242D /* Assets.xcassets */,
 				BDFA1D7F21C62C3A0008242D /* LaunchScreen.storyboard */,
 				BDFA1D8221C62C3A0008242D /* Info.plist */,
+				437B582121C7A9CE00283CCC /* PhotosCell.swift */,
+				437B582321C7A9FA00283CCC /* CommentsCell.swift */,
 			);
 			path = MMasterDemo;
 			sourceTree = "<group>";
@@ -231,15 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MMasterDemo-checkManifestLockResult.txt",
 			);
@@ -253,19 +255,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MMasterDemo/Pods-MMasterDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -287,6 +287,8 @@
 				BDFA1D9C21C65E1F0008242D /* Comments.swift in Sources */,
 				BDFA1D9821C637FF0008242D /* TableViewWithoutAVC.swift in Sources */,
 				BDFA1D9421C637BF0008242D /* TableViewWithAVC.swift in Sources */,
+				437B582221C7A9CE00283CCC /* PhotosCell.swift in Sources */,
+				437B582421C7A9FA00283CCC /* CommentsCell.swift in Sources */,
 				BDFA1D7721C62C380008242D /* AppDelegate.swift in Sources */,
 				BDFA1D9021C636400008242D /* Constants.swift in Sources */,
 				BDFA1D9221C636500008242D /* DBHelper.swift in Sources */,
