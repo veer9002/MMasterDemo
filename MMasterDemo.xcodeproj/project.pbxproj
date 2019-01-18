@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		437B582221C7A9CE00283CCC /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582121C7A9CE00283CCC /* PhotosCell.swift */; };
 		437B582421C7A9FA00283CCC /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582321C7A9FA00283CCC /* CommentsCell.swift */; };
+		43E427A521F201D900D10A4F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E427A421F201D900D10A4F /* VideoViewController.swift */; };
 		58BD5B83CBA92703850E6E26 /* Pods_MMasterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB72DE4410D6AE28255739E /* Pods_MMasterDemo.framework */; };
 		BDFA1D7721C62C380008242D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA1D7621C62C380008242D /* AppDelegate.swift */; };
 		BDFA1D7921C62C380008242D /* CollectionWithAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA1D7821C62C380008242D /* CollectionWithAVC.swift */; };
@@ -28,6 +29,7 @@
 		2EB72DE4410D6AE28255739E /* Pods_MMasterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMasterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437B582121C7A9CE00283CCC /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		437B582321C7A9FA00283CCC /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		43E427A421F201D900D10A4F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		481C3FB343D470068AB38B86 /* Pods-MMasterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMasterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMasterDemo/Pods-MMasterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BDFA1D7321C62C380008242D /* MMasterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMasterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFA1D7621C62C380008242D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,8 +101,6 @@
 				BDFA1D7D21C62C3A0008242D /* Assets.xcassets */,
 				BDFA1D7F21C62C3A0008242D /* LaunchScreen.storyboard */,
 				BDFA1D8221C62C3A0008242D /* Info.plist */,
-				437B582121C7A9CE00283CCC /* PhotosCell.swift */,
-				437B582321C7A9FA00283CCC /* CommentsCell.swift */,
 			);
 			path = MMasterDemo;
 			sourceTree = "<group>";
@@ -119,6 +119,7 @@
 				BDFA1D9321C637BF0008242D /* TableViewWithAVC.swift */,
 				BDFA1D9521C637DA0008242D /* CollectionWithoutAVC.swift */,
 				BDFA1D9721C637FF0008242D /* TableViewWithoutAVC.swift */,
+				43E427A421F201D900D10A4F /* VideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +127,8 @@
 		BDFA1D8B21C633E60008242D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				437B582321C7A9FA00283CCC /* CommentsCell.swift */,
+				437B582121C7A9CE00283CCC /* PhotosCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -268,6 +272,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -283,6 +288,7 @@
 			files = (
 				BDFA1D9E21C661620008242D /* Photos.swift in Sources */,
 				BDFA1D7921C62C380008242D /* CollectionWithAVC.swift in Sources */,
+				43E427A521F201D900D10A4F /* VideoViewController.swift in Sources */,
 				BDFA1D9621C637DA0008242D /* CollectionWithoutAVC.swift in Sources */,
 				BDFA1D9C21C65E1F0008242D /* Comments.swift in Sources */,
 				BDFA1D9821C637FF0008242D /* TableViewWithoutAVC.swift in Sources */,

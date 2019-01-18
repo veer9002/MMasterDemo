@@ -9,5 +9,6 @@ target 'MMasterDemo' do
 	pod 'RealmSwift'
 	pod 'Alamofire'
 	pod 'Kingfisher'
-
+	pod 'YouTubePlayer'
+	
 end
