@@ -14,32 +14,46 @@ class DBHelper {
     static let shared = DBHelper()
     var realm: Realm!
     
-    func insertIntoDb(json: NSArray) {
-        var dataArr = [Photos]()
+//    func insertIntoDb(json: NSArray) {
+//        var dataArr = [Photos]()
+//        self.realm = try! Realm()
+//        
+//        if json.count > 0 {
+//            for i in 0..<json.count {
+//                let photos = Photos()
+//                photos.albumId = (json[i] as AnyObject).value(forKey: "albumId") as! Int
+//                photos.id = (json[i] as AnyObject).value(forKey: "id") as! Int
+//                photos.title = (json[i] as AnyObject).value(forKey: "title") as! String
+//                photos.url = (json[i] as AnyObject).value(forKey: "url") as! String
+//                photos.thumbnailUrl = (json[i] as AnyObject).value(forKey: "thumbnailUrl") as! String
+//
+//                dataArr.append(photos)
+//            }
+//            try! self.realm.write {
+//                if (dataArr.count > 0) {
+//                    self.realm.add(dataArr, update: true)
+//                } else {
+//                    self.realm.add(dataArr)
+//                }
+//            }
+//        } else {
+//            print("No data")
+//        }
+//    }
+    
+    func inserIntoDB(data: [Photos]) {
         self.realm = try! Realm()
-        
-        if json.count > 0 {
-            for i in 0..<json.count {
-                let photos = Photos()
-                photos.albumId = (json[i] as AnyObject).value(forKey: "albumId") as! Int
-                photos.id = (json[i] as AnyObject).value(forKey: "id") as! Int
-                photos.title = (json[i] as AnyObject).value(forKey: "title") as! String
-                photos.url = (json[i] as AnyObject).value(forKey: "url") as! String
-                photos.thumbnailUrl = (json[i] as AnyObject).value(forKey: "thumbnailUrl") as! String
 
-                dataArr.append(photos)
+        try! self.realm.write {
+            if data.count > 0 {
+                self.realm.add(data, update: true)
+            } else {
+                self.realm.add(data)
             }
-            try! self.realm.write {
-                if (dataArr.count > 0) {
-                    self.realm.add(dataArr, update: true)
-                } else {
-                    self.realm.add(dataArr)
-                }
-            }
-        } else {
-            print("No data")
         }
     }
+    
+    
     
     func insertComments(jsonArr: NSArray) {
         var dataArr = [Comments]()

@@ -33,30 +33,35 @@ class CollectionWithAVC: UIViewController {
                 dataArray.append(list[i])
             }
         } else {
-            fetchAPI()
+//            fetchAPI()
+            let url = Constants.Urls.photosUrl
+            APIManager().fetchAPI(urlString: url) { (photos) in
+                self.dataArray = photos
+                self.collectionView.reloadData()
+            }
         }
     }
     
-    func fetchAPI() {
-        let url = Constants.Urls.photosUrl
-        Alamofire.request(url).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-                        
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-                guard let jsonArray = json as? NSArray else { return print("Cannot convert json to error") }
-                print(jsonArray.count)
-                _ = DBHelper.shared.insertIntoDb(json: jsonArray)
-            }
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
+//    func fetchAPI() {
+//        let url = Constants.Urls.photosUrl
+//        Alamofire.request(url).responseJSON { response in
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
+//
+//            if let json = response.result.value {
+//                print("JSON: \(json)") // serialized json response
+//                guard let jsonArray = json as? NSArray else { return print("Cannot convert json to error") }
+//                print(jsonArray.count)
+//                _ = DBHelper.shared.insertIntoDb(json: jsonArray)
 //            }
-             self.fetchFromDB()
-             self.collectionView.reloadData()
-        }
-    }
+////            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+////                print("Data: \(utf8Text)") // original server data as UTF8 string
+////            }
+//             self.fetchFromDB()
+//             self.collectionView.reloadData()
+//        }
+//    }
 }
 
 extension CollectionWithAVC: UICollectionViewDelegate, UICollectionViewDataSource {

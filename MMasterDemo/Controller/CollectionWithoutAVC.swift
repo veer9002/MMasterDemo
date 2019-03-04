@@ -29,39 +29,39 @@ class CollectionWithoutAVC: UIViewController {
                 dataArr.append(list[i])
             }
         } else {
-            fetchJson()
+//            fetchJson()
         }
     }
     
-    func fetchJson() {
-        let urlString = Constants.Urls.photosUrl
-        guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-            DispatchQueue.main.async {
-                if let err = err {
-                    print("Failed", err)
-                    return
-                }
-                
-                if let response = response as? HTTPURLResponse {
-                    
-                     guard response.statusCode == 200 else { return }
-                     guard let data = data else { return }
-                    
-                    do {
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        self.dataArr = try decoder.decode([Photos].self, from: data)
-                        _ = DBHelper.shared.insertIntoDb(json: self.dataArr as NSArray)
-                        self.collectionView.reloadData()
-                        print(self.dataArr.count)
-                    } catch let jsonErr  {
-                        print("faield to decode", jsonErr)
-                    }
-                }
-            }
-            }.resume()
-    }
+//    func fetchJson() {
+//        let urlString = Constants.Urls.photosUrl
+//        guard let url = URL(string: urlString) else { return }
+//        URLSession.shared.dataTask(with: url) { (data, response, err) in
+//            DispatchQueue.main.async {
+//                if let err = err {
+//                    print("Failed", err)
+//                    return
+//                }
+//
+//                if let response = response as? HTTPURLResponse {
+//
+//                     guard response.statusCode == 200 else { return }
+//                     guard let data = data else { return }
+//
+//                    do {
+//                        let decoder = JSONDecoder()
+//                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+//                        self.dataArr = try decoder.decode([Photos].self, from: data)
+//                        _ = DBHelper.shared.insertIntoDb(json: self.dataArr as NSArray)
+//                        self.collectionView.reloadData()
+//                        print(self.dataArr.count)
+//                    } catch let jsonErr  {
+//                        print("faield to decode", jsonErr)
+//                    }
+//                }
+//            }
+//            }.resume()
+//    }
     
 }
 

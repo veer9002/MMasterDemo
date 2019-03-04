@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43570A06222D064C0093655E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43570A05222D064C0093655E /* APIManager.swift */; };
 		437B582221C7A9CE00283CCC /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582121C7A9CE00283CCC /* PhotosCell.swift */; };
 		437B582421C7A9FA00283CCC /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B582321C7A9FA00283CCC /* CommentsCell.swift */; };
 		43E427A521F201D900D10A4F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E427A421F201D900D10A4F /* VideoViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2EB72DE4410D6AE28255739E /* Pods_MMasterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMasterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43570A05222D064C0093655E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		437B582121C7A9CE00283CCC /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		437B582321C7A9FA00283CCC /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
 		43E427A421F201D900D10A4F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43570A04222D06260093655E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				43570A05222D064C0093655E /* APIManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5446498AF3572307852E82D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 				BDFA1D8C21C633EA0008242D /* Model */,
 				BDFA1D8B21C633E60008242D /* View */,
 				BDFA1D8A21C633E20008242D /* Controller */,
+				43570A04222D06260093655E /* Networking */,
 				BDFA1D8921C633DB0008242D /* Extensions */,
 				BDFA1D7621C62C380008242D /* AppDelegate.swift */,
 				BDFA1D7A21C62C380008242D /* Main.storyboard */,
@@ -296,6 +307,7 @@
 				437B582221C7A9CE00283CCC /* PhotosCell.swift in Sources */,
 				437B582421C7A9FA00283CCC /* CommentsCell.swift in Sources */,
 				BDFA1D7721C62C380008242D /* AppDelegate.swift in Sources */,
+				43570A06222D064C0093655E /* APIManager.swift in Sources */,
 				BDFA1D9021C636400008242D /* Constants.swift in Sources */,
 				BDFA1D9221C636500008242D /* DBHelper.swift in Sources */,
 			);

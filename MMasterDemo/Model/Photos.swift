@@ -26,6 +26,6 @@ class Photos: Object, Decodable {
     
     // set primary key "invoiceID"
     override static func primaryKey() -> String {
-        return "albumId"
+        return "id"
     }
 }
