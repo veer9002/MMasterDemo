@@ -15,15 +15,15 @@ import RealmSwift
 //"email": "Manuela_Stehr@chelsie.tv",
 //"body": "illum et alias quidem magni voluptatum\nab soluta ea qui saepe corrupti hic et\ncum repellat esse\nest sint vel veritatis officia consequuntur cum"
 
-class Comments: Object {
+class Comments: Object, Decodable {
     @objc dynamic var postId = Int()
     @objc dynamic var id = Int()
     @objc dynamic var name = ""
-    @objc dynamic var emailId = ""
+    @objc dynamic var email = ""
     @objc dynamic var body = ""
     
     // set primary key "invoiceID"
     override static func primaryKey() -> String {
-        return "postId"
+        return "id"
     }
 }

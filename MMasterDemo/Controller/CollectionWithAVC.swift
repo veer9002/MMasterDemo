@@ -21,10 +21,10 @@ class CollectionWithAVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        fetchFromDB()
+        fetchData()
     }
 
-    func fetchFromDB() {
+    func fetchData() {
         let list = realm.objects(Photos.self)
         print(list.count)
         

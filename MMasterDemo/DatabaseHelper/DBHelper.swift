@@ -55,32 +55,45 @@ class DBHelper {
     
     
     
-    func insertComments(jsonArr: NSArray) {
-        var dataArr = [Comments]()
+//    func insertComments(jsonArr: NSArray) {
+//        var dataArr = [Comments]()
+//        self.realm = try! Realm()
+//
+//        if jsonArr.count > 0 {
+//            for i in 0..<jsonArr.count {
+//                let comments = Comments()
+//                comments.postId = (jsonArr[i] as AnyObject).value(forKey: "postId") as! Int
+//                comments.id = (jsonArr[i] as AnyObject).value(forKey: "id") as! Int
+//                comments.emailId = (jsonArr[i] as AnyObject).value(forKey: "email") as! String
+//                comments.name = (jsonArr[i] as AnyObject).value(forKey: "name") as! String
+//                comments.body = (jsonArr[i] as AnyObject).value(forKey: "body") as! String
+//
+//                dataArr.append(comments)
+//            }
+//            try! self.realm.write {
+//                if (dataArr.count > 0) {
+//                    self.realm.add(dataArr, update: true)
+//                } else {
+//                    self.realm.add(dataArr)
+//                }
+//            }
+//        } else {
+//            print("No data")
+//        }
+//    }
+    
+    func insertComments(data: [Comments]) {
         self.realm = try! Realm()
         
-        if jsonArr.count > 0 {
-            for i in 0..<jsonArr.count {
-                let comments = Comments()
-                comments.postId = (jsonArr[i] as AnyObject).value(forKey: "postId") as! Int
-                comments.id = (jsonArr[i] as AnyObject).value(forKey: "id") as! Int
-                comments.emailId = (jsonArr[i] as AnyObject).value(forKey: "email") as! String
-                comments.name = (jsonArr[i] as AnyObject).value(forKey: "name") as! String
-                comments.body = (jsonArr[i] as AnyObject).value(forKey: "body") as! String
-                
-                dataArr.append(comments)
+        try! self.realm.write {
+            if data.count > 0 {
+                self.realm.add(data, update: true)
+            } else {
+                self.realm.add(data)
             }
-            try! self.realm.write {
-                if (dataArr.count > 0) {
-                    self.realm.add(dataArr, update: true)
-                } else {
-                    self.realm.add(dataArr)
-                }
-            }
-        } else {
-            print("No data")
         }
     }
+    
 }
 
 

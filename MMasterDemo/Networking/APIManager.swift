@@ -13,35 +13,24 @@ class APIManager {
     
     // MARK: Fetch data with alamofire
     func fetchAPI(urlString: String, completion: @escaping ([Photos]) -> ()) {
-//        let url = Constants.Urls.photosUrl
         Alamofire.request(urlString).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            guard let data = response.data else {
-                return
+          
+            if response.response?.statusCode == 200 {
+                guard let data = response.data else { return }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode([Photos].self, from: data)
+                    DBHelper.shared.inserIntoDB(data: result)
+                    completion(result)
+                } catch {
+                    print("Error \(error)")
+                }
+            } else {
+                print("Error in fetching data.")
             }
-         
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try decoder.decode([Photos].self, from: data)
-                _ = DBHelper.shared.inserIntoDB(data: result)
-                completion(result)
-            } catch {
-                print("Error \(error)")
-            }
-           
-            
-//            if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
-//                guard let jsonArray = json as? NSArray else { return print("Cannot convert json to error") }
-//                print(jsonArray.count)
-//
-//                _ = DBHelper.shared.insertIntoDb(json: jsonArray)
-//
-//            }
+
         }
     }
     
@@ -69,5 +58,27 @@ class APIManager {
 //            }.resume()
 //    }
     
+    // Fetch comments data from server
+    
+    func fetchForComments(urlString: String, completion: @escaping ([Comments]) -> ()) {
+        Alamofire.request(urlString).responseJSON { response in
+            
+            if response.response?.statusCode == 200 {
+                guard let data = response.data else { return }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode([Comments].self, from: data)
+                    DBHelper.shared.insertComments(data: result)
+                    completion(result)
+                } catch {
+                    print("Error \(error)")
+                }
+            } else {
+                print("Error in fetching data.")
+            }
+        }
+    }
     
 }
