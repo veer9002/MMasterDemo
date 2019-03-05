@@ -44,6 +44,14 @@ class TableViewWithAVC: UIViewController {
             }
         }
     }
+    
+    @objc func connected(sender: UIButton) {
+        let buttonTag = sender.tag
+        let alert = UIAlertController(title: "Action", message: "Selected on \(buttonTag)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
@@ -64,6 +72,10 @@ extension TableViewWithAVC: UITableViewDataSource {
         cell.lblName.text = commentsArray[indexPath.row].name
         cell.lblEmail.text = commentsArray[indexPath.row].email
         cell.lblBody.text = commentsArray[indexPath.row].body
+        
+        cell.btnShow.tag = indexPath.row
+        cell.btnShow.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+        
         return cell
     }
 

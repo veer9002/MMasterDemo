@@ -319,11 +319,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="101" id="PgD-nS-jsP" customClass="CommentsCell" customModule="MMasterDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="101"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="145" id="PgD-nS-jsP" customClass="CommentsCell" customModule="MMasterDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgD-nS-jsP" id="fQS-cV-ahS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="144.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-uW-vUI">
@@ -358,15 +358,25 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-pi-eCR">
+                                                    <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                                    <color key="backgroundColor" red="0.69474078120000005" green="0.77244646240000003" blue="0.86681617060000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Show"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="AHy-uW-vUI" secondAttribute="bottom" constant="7.5" id="DOl-rA-Qo9"/>
-                                                <constraint firstItem="AHy-uW-vUI" firstAttribute="leading" secondItem="fQS-cV-ahS" secondAttribute="leading" constant="16" id="DPr-HA-JRE"/>
-                                                <constraint firstItem="AHy-uW-vUI" firstAttribute="top" secondItem="fQS-cV-ahS" secondAttribute="top" constant="11" id="NNd-SY-M41"/>
-                                                <constraint firstAttribute="trailing" secondItem="AHy-uW-vUI" secondAttribute="trailing" constant="16" id="ukK-Lq-qSq"/>
+                                                <constraint firstItem="nZo-pi-eCR" firstAttribute="top" secondItem="AHy-uW-vUI" secondAttribute="bottom" constant="11" id="GCH-V4-lhu"/>
+                                                <constraint firstItem="nZo-pi-eCR" firstAttribute="top" secondItem="AHy-uW-vUI" secondAttribute="bottom" constant="11" id="OYH-Yq-2gI"/>
+                                                <constraint firstItem="AHy-uW-vUI" firstAttribute="top" secondItem="fQS-cV-ahS" secondAttribute="top" constant="11" id="PoI-mc-ewI"/>
+                                                <constraint firstItem="AHy-uW-vUI" firstAttribute="leading" secondItem="fQS-cV-ahS" secondAttribute="leading" constant="16" id="bbF-tq-1lt"/>
+                                                <constraint firstAttribute="bottom" secondItem="nZo-pi-eCR" secondAttribute="bottom" constant="10.5" id="m38-nX-g1f"/>
+                                                <constraint firstAttribute="trailing" secondItem="AHy-uW-vUI" secondAttribute="trailing" constant="16" id="nem-2j-qmM"/>
+                                                <constraint firstAttribute="trailing" secondItem="nZo-pi-eCR" secondAttribute="trailing" constant="16" id="pkD-Az-OD2"/>
+                                                <constraint firstItem="nZo-pi-eCR" firstAttribute="leading" secondItem="fQS-cV-ahS" secondAttribute="leading" constant="16" id="uum-TU-8UA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnShow" destination="nZo-pi-eCR" id="RIW-61-ad7"/>
                                             <outlet property="lblBody" destination="fdb-nQ-PoE" id="yQ9-8k-Ohp"/>
                                             <outlet property="lblEmail" destination="x1N-9l-BiV" id="1eM-cL-LQt"/>
                                             <outlet property="lblName" destination="wfP-PG-bJf" id="epA-gF-T4g"/>

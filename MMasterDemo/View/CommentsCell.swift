@@ -14,5 +14,6 @@ class CommentsCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblBody: UILabel!
+    @IBOutlet weak var btnShow: UIButton!
     
 }
